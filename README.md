@@ -5,6 +5,15 @@
 * GPUSpriteInstancing is a Unity package that provides efficient GPU-based sprite rendering using compute buffers and instancing
 * Optimized with Unity Burst compiler and Job System for high-performance sprite rendering
 
+<br />
+
+<p style="text-align:center;">
+  <img src="/Assets/DocResources/Gifs/SampleDemo.gif" width="800">
+</p>
+
+**<p style="text-align:center;">Sample demo running on Mac with 1,000,000 instances</p>**
+<p style="text-align:center;">Free sprite resource <a href="https://cupnooble.itch.io/sprout-lands-asset-pack">here</a></p>
+
 ## II. Features
 
   <details>
@@ -13,7 +22,7 @@
   * GPU Instanced Sprite Rendering
   * Batched Drawing System
   * Sprite Atlas Support
-  * Efficient Memory Management
+  * Memory Management
   * Buffer Management
   * Job System Integration
   * Burst Compilation

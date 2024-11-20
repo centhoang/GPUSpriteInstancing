@@ -150,7 +150,7 @@ namespace GPUSpriteInstancing.Sample
         void OnGUI()
         {
             GUIStyle style = new GUIStyle(GUI.skin.label);
-            style.fontSize = 24;
+            style.fontSize = 36; // Increased font size by 1.5 times
             style.normal.textColor = Color.white;
 
             // Draw outline/shadow effect
@@ -160,13 +160,19 @@ namespace GPUSpriteInstancing.Sample
             string fps = $"FPS: {1.0f / Time.smoothDeltaTime:F1}";
             string count = $"Instance Count: {instanceCount:N0}";
 
+            // Draw completely black background
+            Color originalColor = GUI.color;
+            GUI.color = Color.black;
+            GUI.Box(new Rect(12, 12, 465, 105), GUIContent.none); // Increased size by 1.5 times
+            GUI.color = originalColor;
+
             // Draw outline/shadow
-            GUI.Label(new Rect(12, 12, 300, 30), fps, outlineStyle);
-            GUI.Label(new Rect(12, 42, 300, 30), count, outlineStyle);
+            GUI.Label(new Rect(18, 18, 450, 45), fps, outlineStyle); // Increased size by 1.5 times
+            GUI.Label(new Rect(18, 63, 450, 45), count, outlineStyle); // Increased size by 1.5 times
 
             // Draw main text
-            GUI.Label(new Rect(10, 10, 300, 30), fps, style);
-            GUI.Label(new Rect(10, 40, 300, 30), count, style);
+            GUI.Label(new Rect(15, 15, 450, 45), fps, style); // Increased size by 1.5 times
+            GUI.Label(new Rect(15, 60, 450, 45), count, style); // Increased size by 1.5 times
         }
     }
 }
