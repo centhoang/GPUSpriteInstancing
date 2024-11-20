@@ -12,7 +12,7 @@
 
 <p align="center"> Sample demo running on Mac with <u><strong>1,000,000 instances</strong></u> at <u><strong>> 100 FPS</strong></u> </p>
 
-<p align="center"> Free sprite resource <a href="https://cupnooble.itch.io/sprout-lands-asset-pack">here </p>
+<p align="center"> Sample sprite source <a href="https://cupnooble.itch.io/sprout-lands-asset-pack">here</a> (Free) </p>
 
 ## II. Features
 
