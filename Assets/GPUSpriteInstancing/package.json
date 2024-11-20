@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "displayName": "GPUSpriteInstancing",
     "description": "Provides GPU sprite instance rendering using Burst and Job System for Unity.",
-    "unity": "6000.0.24",
+    "unity": "2022.3",
     "license": "MIT",
     "author": {
         "name": "centhoang",

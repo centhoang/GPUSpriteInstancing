@@ -41,7 +41,7 @@
 
 ### **>** Requirements
 
-* Unity 6000.0.24 or higher
+* Unity 2022.3 or higher
 * Burst Package
 * Mathematics Package
 
