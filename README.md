@@ -8,11 +8,11 @@
 <br />
 
 <p style="text-align:center;">
-  <img src="/Assets/DocResources/Gifs/SampleDemo.gif" width="1000">
+  <img src="/Assets/DocResources/Gifs/SampleDemo.gif" width="1000"><br>
+  <strong>Sample demo running on Mac with 1,000,000 instances</strong><br>
+  Free sprite resource <a href="https://cupnooble.itch.io/sprout-lands-asset-pack">here</a>
 </p>
 
-**<center>Sample demo running on Mac with 1,000,000 instances</center>**
-<center>Free sprite resource <a href="https://cupnooble.itch.io/sprout-lands-asset-pack">here</center>
 ## II. Features
 
   <details>
