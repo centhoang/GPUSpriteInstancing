@@ -14,8 +14,11 @@ namespace GPUSpriteInstancing
         }
         
         private static readonly int MainTex = Shader.PropertyToID("_MainTex");
-        
-        private Material instanceMaterial;
+        private static readonly int PositionBuffer = Shader.PropertyToID("_PositionBuffer");
+        private static readonly int SpriteDataBuffer = Shader.PropertyToID("_SpriteDataBuffer");
+        private static readonly int InstanceOffset = Shader.PropertyToID("_InstanceOffset");
+
+        private readonly Material instanceMaterial;
         
         private ComputeBuffer positionBuffer;
         private ComputeBuffer spriteDataBuffer;
@@ -40,8 +43,8 @@ namespace GPUSpriteInstancing
             spriteDataBuffer = new ComputeBuffer(count, sizeof(float) * 4);
             
             // Setup material buffers
-            propertyBlock.SetBuffer("_PositionBuffer", positionBuffer);
-            propertyBlock.SetBuffer("_SpriteDataBuffer", spriteDataBuffer);
+            propertyBlock.SetBuffer(PositionBuffer, positionBuffer);
+            propertyBlock.SetBuffer(SpriteDataBuffer, spriteDataBuffer);
             
             // Create native arrays
             positions = new NativeArray<float2>(count, Allocator.Persistent);
@@ -53,12 +56,12 @@ namespace GPUSpriteInstancing
             isInitialized = true;
         }
 
-        private Mesh CreateQuadMesh()
+        private static Mesh CreateQuadMesh()
         {
-            Mesh mesh = new Mesh();
-            float size = 0.5f;
+            var mesh = new Mesh();
+            var size = 0.5f;
 
-            Vector3[] vertices = new Vector3[4]
+            var vertices = new[]
             {
                 new Vector3(-size, -size, 0),
                 new Vector3(size, -size, 0),
@@ -66,7 +69,7 @@ namespace GPUSpriteInstancing
                 new Vector3(-size, size, 0)
             };
 
-            Vector2[] uv = new Vector2[4]
+            var uv = new[]
             {
                 new Vector2(0, 0),
                 new Vector2(1, 0),
@@ -74,7 +77,7 @@ namespace GPUSpriteInstancing
                 new Vector2(0, 1)
             };
 
-            int[] triangles = new int[6]
+            var triangles = new[]
             {
                 0, 1, 2,
                 0, 2, 3
@@ -103,12 +106,10 @@ namespace GPUSpriteInstancing
 
         public void UpdateAndRender(NativeArray<SpriteRendererData> spriteData, Texture2D atlas)
         {
-            int count = spriteData.Length;
+            var count = spriteData.Length;
             
             if (!isInitialized)
-            {
                 SetupMeshAndMaterial(count);
-            }
 
             // Update instance data using job system
             new UpdateInstanceDataJob
@@ -126,13 +127,13 @@ namespace GPUSpriteInstancing
             propertyBlock.SetTexture(MainTex, atlas);
 
             // Render in batches
-            int remainingInstances = count;
-            int offset = 0;
+            var remainingInstances = count;
+            var offset = 0;
 
             while (remainingInstances > 0)
             {
-                int batchCount = Mathf.Min(remainingInstances, BATCH_SIZE);
-                propertyBlock.SetInt("_InstanceOffset", offset);
+                var batchCount = Mathf.Min(remainingInstances, BATCH_SIZE);
+                propertyBlock.SetInt(InstanceOffset, offset);
                 
                 Graphics.DrawMeshInstancedProcedural(
                     quadMesh,
@@ -148,7 +149,7 @@ namespace GPUSpriteInstancing
             }
         }
 
-        private void OnDestroy()
+        public void Release()
         {
             if (positions.IsCreated) positions.Dispose();
             if (spriteData.IsCreated) spriteData.Dispose();
