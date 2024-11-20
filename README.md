@@ -7,13 +7,12 @@
 
 <br />
 
-<p style="text-align:center;">
-  <img src="/Assets/DocResources/Gifs/SampleDemo.gif" width="1000"><br>
-  Sample demo running on Mac with <u><strong>1,000,000 instances</strong></u> at <u><strong>> 100 FPS</strong></u><br>
-  Free sprite resource <a href="https://cupnooble.itch.io/sprout-lands-asset-pack">here</a>
-</p>
+<p align="center">
+  <img src="/Assets/DocResources/Gifs/SampleDemo.gif" width="1000"> </p>
 
-<p align="center"> Test </p>
+<p align="center"> Sample demo running on Mac with <u><strong>1,000,000 instances</strong></u> at <u><strong>> 100 FPS</strong></u> </p>
+
+<p align="center"> Free sprite resource <a href="https://cupnooble.itch.io/sprout-lands-asset-pack">here </p>
 
 ## II. Features
 
