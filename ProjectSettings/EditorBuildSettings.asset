@@ -9,6 +9,8 @@ EditorBuildSettings:
     path: Assets/GPUSpriteInstancing/Samples/Samples/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 778302d6543c34c8da9fca0ad2241261, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7651730ecbc314a219f179482289a53b, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 0af8f281c394e43eaace70112a638e49, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
