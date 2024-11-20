@@ -12,7 +12,7 @@
     "samples": [
         {
             "displayName": "GPUSpriteInstancing Samples",
-            "description": "Sample inspector extension using Alchemy attributes.",
+            "description": "Sample inspector visual and peformance spawning 1,000,000 instances.",
             "path": "Samples~/Samples"
         }
     ],
