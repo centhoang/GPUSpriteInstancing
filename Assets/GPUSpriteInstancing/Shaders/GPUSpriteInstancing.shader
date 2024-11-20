@@ -13,7 +13,7 @@ Shader "Custom/GPUSpriteInstancing"
         }
         Blend SrcAlpha OneMinusSrcAlpha
         ZWrite Off
-        Cull Back  // Changed from Off to Back to render only front faces
+        Cull Back
 
         Pass
         {
